@@ -242,7 +242,7 @@
                         {
                          "name":"exitUrl",
                          "type":"string",
-                         "value":".\/map#entry_b_area_north"
+                         "value":".\/digitalsummit#entry_b_area_north"
                         }],
                  "type":"tilelayer",
                  "visible":true,
@@ -296,7 +296,7 @@
                         {
                          "name":"exitUrl",
                          "type":"string",
-                         "value":".\/map#entry_b_area_south"
+                         "value":".\/digitalsummit#entry_b_area_south"
                         }],
                  "type":"tilelayer",
                  "visible":true,
