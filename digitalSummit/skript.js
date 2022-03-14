@@ -1,6 +1,6 @@
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
-var urlFeedback = "https://forms.office.com/Pages/ResponsePage.aspx?id=nC2noeZJbU-a9lqvoRg7_f26WHDvlOFNi_8Y43fECOdUMDVDTUpUUDRONkxHMzdLQ09WRlQxUUZSMS4u";
+var urlTutorial = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure-erste-schritte";
 
 function closePopUp(){
     if (currentPopup !== undefined) {
@@ -9,21 +9,21 @@ function closePopUp(){
     }
 }
 
-var zoneFeedback = "feedback";
+var zoneTutorial = "tutorial";
 
-WA.room.onEnterZone(zoneFeedback, () => {
-   currentPopup =  WA.ui.openPopup("popUpFeedback","Hier kannst du Feedback abgeben.",[
+WA.room.onEnterZone(zoneTutorial, () => {
+   currentPopup =  WA.ui.openPopup("popUpTutorial","Möchtest du dir das Tutorial ansehen?.",[
         {
-            label: "Feedback",
+            label: "Tutorial",
             callback: (popup => {
-                WA.nav.openCoWebSite(urlFeedback);
+                WA.nav.openCoWebSite(urlTutorial);
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
         }]);
 })
 
-WA.room.onLeaveZone(zoneFeedback, () =>{
+WA.room.onLeaveZone(zoneTutorial, () =>{
     closePopUp();
 
     if (isCoWebSiteOpened) {
