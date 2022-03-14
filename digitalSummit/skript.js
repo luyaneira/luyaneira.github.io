@@ -9,10 +9,28 @@ function closePopUp(){
     }
 }
 
+var zoneIntro = "intro";
 var zoneTutorial = "tutorial";
 
+WA.room.onEnterZone(zoneIntro, () => {
+    currentPopup = WA.ui.openPopup("popUpIntro", "Willkommen beim DigitalSummit in WorkAdventure!\n" +
+    "Zur Bewegung verwenden Sie die Pfeiltasten oder navigieren per Rechtsklick zu einem Punkt auf der Karte.\n" +
+    "Wenn Sie ein ausführliches Tutorial anschauen möchten können Sie zur Tutorial-Tafel vor dem Bahnhofsgebäude laufen.\n" +
+    "Wir wünschen Ihnen viel Spaß beim DigitalSummit im WorkAdventure!", [
+        {
+            label: "Alles Klar!",
+            callback: (popup => {
+                closePopUp();
+            })
+        }]);    
+})
+
+WA.room.onLeaveZone(zoneIntro, () => {
+    closePopUp();
+})
+
 WA.room.onEnterZone(zoneTutorial, () => {
-   currentPopup =  WA.ui.openPopup("popUpTutorial","Möchtest du dir das Tutorial ansehen?.",[
+   currentPopup = WA.ui.openPopup("popUpTutorial", "Möchtest du dir das Tutorial ansehen?.",[
         {
             label: "Tutorial",
             callback: (popup => {
