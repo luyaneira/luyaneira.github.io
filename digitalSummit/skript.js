@@ -13,6 +13,7 @@ function closePopUp(){
 
 var zoneIntro = "intro";
 var zoneTutorial = "tutorial";
+var zoneGuide = "guide";
 
 WA.room.onEnterZone(zoneTutorial, () => {
     currentPopup = WA.ui.openPopup("popUpTutorial", "Möchtest du dir das Tutorial ansehen?.",[
@@ -33,6 +34,27 @@ WA.room.onEnterZone(zoneTutorial, () => {
          WA.nav.closeCoWebSite();
          isCoWebSiteOpened = false;
      }
+ })
+
+ WA.room.onEnterZone(zoneGuide, () => {
+    currentPopup = WA.ui.openPopup("popUpGuide", "Wegweiser\n\n" +
+    "Hauptbahnhof: Ankunftspunkt (Stiller Bereich)\n" +
+    "Dicker Bulle: Treffpunkt für Worms (Spiel)\n" +
+    "Green Pub: Treffpunkt für Pong (Spiel)\n" +
+    "Marktstand: Treffpunkt (Gespräche)\n" +
+    "Cocktailbar: Treffpunkt (Gespräche und Cocktails)\n" +
+    "Dancehall: Treffpunkt (Musik)\n" +
+    "Silberturm: Treffpunkt (Rätsel)\n" ,[
+         {
+             label: "OK",
+             callback: (popup => {
+                 closePopUp();
+             })
+         }]);
+ })
+ 
+ WA.room.onLeaveZone(zoneTutorial, () =>{
+     closePopUp();
  })
 
 WA.room.onEnterZone(zoneIntro, () => {
