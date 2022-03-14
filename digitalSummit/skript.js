@@ -1,5 +1,3 @@
-import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 var urlTutorial = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure-erste-schritte";
@@ -53,7 +51,7 @@ WA.room.onEnterZone(zoneTutorial, () => {
          }]);
  })
  
- WA.room.onLeaveZone(zoneTutorial, () =>{
+ WA.room.onLeaveZone(zoneGuide, () =>{
      closePopUp();
  })
 
