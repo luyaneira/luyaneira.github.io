@@ -1,4 +1,4 @@
-//import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
