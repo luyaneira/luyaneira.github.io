@@ -1,3 +1,5 @@
+import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 var urlTutorial = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure-erste-schritte";
@@ -10,12 +12,15 @@ function closePopUp(){
 }
 
 var zoneIntro = "intro";
+var zoneVisibility = "visibility";
 var zoneTutorial = "tutorial";
 var zoneTutorial1 = "tutorial1";
 var zoneTutorial2 = "tutorial2";
 var zoneGuide = "guide";
 var zoneGuide1 = "guide1";
 var zoneGuide2 = "guide2";
+
+var valVisibility = "visible";
 
 var guideMsg = "Wegweiser\n\n" +
 "Hauptbahnhof (Norden): Stiller Bereich\n" +
@@ -27,6 +32,14 @@ var guideMsg = "Wegweiser\n\n" +
 "Silberturm (Süden): Minirätsel\n"
 
 var tutorialMsg = "Möchtest du dir das Tutorial ansehen?"
+
+WA.room.onEnterZone(zoneVisibility, () => {
+    valVisibility = true;
+})
+
+WA.room.onLeaveZone(zoneVisibility, () => {
+    valVisibility = false;
+})
 
 WA.room.onEnterZone(zoneTutorial, () => {
     currentPopup = WA.ui.openPopup("popUpTutorial", tutorialMsg, [
