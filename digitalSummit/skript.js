@@ -1,4 +1,4 @@
-import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+//import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
@@ -53,7 +53,7 @@ WA.room.onEnterZone(zoneTutorial, () => {
         {
             label: "Ja",
             callback: (popup => {
-                WA.nav.openCoWebSite(urlTutorial);
+                WA.openTab(urlTutorial);
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
@@ -73,7 +73,7 @@ WA.room.onEnterZone(zoneTutorial1, () => {
         {
             label: "Ja",
             callback: (popup => {
-                WA.nav.openCoWebSite(urlTutorial);
+                WA.openTab(urlTutorial);
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
@@ -93,7 +93,7 @@ WA.room.onEnterZone(zoneTutorial2, () => {
         {
             label: "Ja",
             callback: (popup => {
-                WA.nav.openCoWebSite(urlTutorial);
+                WA.openTab(urlTutorial);
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
