@@ -27,7 +27,7 @@ var guideMsg = "Wegweiser\n\n" +
 "Dicker Bulle (Nordwesten): Worms\n" +
 "Green Pub (Nordosten): Pong\n" +
 "Marktstand (Zentral): Treffpunkt\n" +
-"Cocktailbar (Südwesten): Treffpunkt\n" +
+"Cocktailbar (Südwesten): Treffpunkt & Cocktails\n" +
 "Dancehall (Südosten): Musik\n" +
 "Silberturm (Süden): Minirätsel\n"
 
@@ -129,10 +129,10 @@ WA.room.onLeaveZone(zoneTutorial2, () =>{
 })
 
 WA.room.onEnterZone(zoneIntro, () => {
-    currentPopup = WA.ui.openPopup("popUpIntro", "Willkommen beim DigitalSummit in WorkAdventure!\n" +
+    currentPopup = WA.ui.openPopup("popUpIntro", "Willkommen beim Digital Summit in WorkAdventure!\n" +
     "Zur Bewegung verwenden Sie die Pfeiltasten oder navigieren per Rechtsklick zu einem Punkt auf der Karte.\n" +
     "Wenn Sie ein ausführliches Tutorial anschauen möchten können Sie zur Tutorial-Tafel vor dem Bahnhofsgebäude laufen.\n" +
-    "Wir wünschen Ihnen viel Spaß beim DigitalSummit in WorkAdventure!", [
+    "Wir wünschen Ihnen viel Spaß beim Digital Summit in WorkAdventure!", [
         {
             label: "Alles Klar!",
             callback: (popup => {
