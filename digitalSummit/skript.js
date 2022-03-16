@@ -12,15 +12,20 @@ function closePopUp(){
 }
 
 var zoneIntro = "intro";
-var zoneVisibility = "visibility";
 var zoneTutorial = "tutorial";
 var zoneTutorial1 = "tutorial1";
 var zoneTutorial2 = "tutorial2";
 var zoneGuide = "guide";
 var zoneGuide1 = "guide1";
 var zoneGuide2 = "guide2";
+var zonePong = "pong";
 
-var valVisibility = "visible";
+var introMsg = "Willkommen beim Digital Summit in WorkAdventure.\n\nWir freuen uns, dass Sie bei unserem virtuellen Get-together dabei sind." +
+"Nutzen Sie hier die Möglichkeit sich mit anderen Kolleg:innen auszutauschen und zu vernetzen. Zudem haben wir unterhaltsame Angebote versteckt." +
+"Gehen Sie eigenständig auf Entdeckungstour oder orientieren sich an den Wegweisern." +
+"Um sich zu bewegen, nutzen Sie die Pfeiltasten auf Ihrer Tastatur oder navigieren per Rechtsklick zu einem Punkt auf der Karte." +
+"Wenn Sie sich ein ausführliches Tutorial anschauen möchten, finden Sie dieses auf der Tafel vor dem Bahnhofsgebäude.\n\n" +
+"Wir wünschen Ihnen viel Spaß!";
 
 var guideMsg = "Wegweiser\n\n" +
 "Hauptbahnhof (Norden): Stiller Bereich\n" +
@@ -29,17 +34,12 @@ var guideMsg = "Wegweiser\n\n" +
 "Marktstand (Zentral): Treffpunkt\n" +
 "Cocktailbar (Südwesten): Treffpunkt & Cocktails\n" +
 "Dancehall (Südosten): Musik\n" +
-"Silberturm (Süden): Minirätsel\n"
+"Silberturm (Süden): Minirätsel\n";
 
-var tutorialMsg = "Möchtest du dir das Tutorial ansehen?"
+var tutorialMsg = "Möchten Sie sich das Tutorial ansehen?";
 
-WA.room.onEnterZone(zoneVisibility, () => {
-    valVisibility = true;
-})
-
-WA.room.onLeaveZone(zoneVisibility, () => {
-    valVisibility = false;
-})
+var pongMsg = "Pong gegeneinander?\n\n1.Wählen Sie Online-Mehrspielermodus\n" +
+"2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und teilen Sie sie Ihrem Partner mit"
 
 WA.room.onEnterZone(zoneTutorial, () => {
     currentPopup = WA.ui.openPopup("popUpTutorial", tutorialMsg, [
@@ -129,16 +129,29 @@ WA.room.onLeaveZone(zoneTutorial2, () =>{
 })
 
 WA.room.onEnterZone(zoneIntro, () => {
-    currentPopup = WA.ui.openPopup("popUpIntro", "Willkommen beim Digital Summit in WorkAdventure!\n" +
-    "Zur Bewegung verwenden Sie die Pfeiltasten oder navigieren per Rechtsklick zu einem Punkt auf der Karte.\n" +
-    "Wenn Sie ein ausführliches Tutorial anschauen möchten können Sie zur Tutorial-Tafel vor dem Bahnhofsgebäude laufen.\n" +
-    "Wir wünschen Ihnen viel Spaß beim Digital Summit in WorkAdventure!", [
+    currentPopup = WA.ui.openPopup("popUpIntro", introMsg, [
         {
             label: "Alles Klar!",
             callback: (popup => {
                 closePopUp();
             })
-        }]);    
+        }]);
+    
+})
+
+WA.room.onLeaveZone(zoneIntro, () => {
+    closePopUp();
+})
+
+WA.room.onEnterZone(zonePong, () => {
+    currentPopup = WA.ui.openPopup("popUpPong", pongMsg, [
+        {
+            label: "OK",
+            callback: (popup => {
+                closePopUp();
+            })
+        }]);
+    
 })
 
 WA.room.onLeaveZone(zoneIntro, () => {
