@@ -56,10 +56,6 @@ WA.room.onEnterZone(zoneIntro, () => {
 
 WA.room.onLeaveZone(zoneIntro, () => {
     closePopUp();
-    WA.onInit().then(async () => {
-        var position = await WA.player.getPosition();
-        WA.camera.set(position.x, position.y, 400, 400, false, true);
-    })
 })
 
 WA.room.onEnterZone(zoneTutorial, () => {
