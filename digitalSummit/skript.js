@@ -39,7 +39,28 @@ var guideMsg = "Wegweiser\n\n" +
 var tutorialMsg = "Möchten Sie sich das Tutorial ansehen?";
 
 var pongMsg = "Pong gegeneinander?\n\n1.Wählen Sie Online-Mehrspielermodus\n" +
-"2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und teilen Sie sie Ihrem Partner mit"
+"2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und klicken Sie auf 'Zimmer ändern'\n" +
+"4. Teilen Sie die Zimmernummer Ihrem Partner mit\n\n" +
+"Die Steuerung funktioniert mit den Pfeiltasten."
+
+WA.room.onEnterZone(zoneIntro, () => {
+    currentPopup = WA.ui.openPopup("popUpIntro", introMsg, [
+        {
+            label: "Alles Klar!",
+            callback: (popup => {
+                closePopUp();
+            })
+        }]);
+    WA.camera.set(1056,160,2240,400,false,false);
+})
+
+WA.room.onLeaveZone(zoneIntro, () => {
+    closePopUp();
+    WA.onInit().then(async () => {
+        var position = await WA.player.getPosition();
+        WA.camera.set(position.x, position.y, 400, 400, false, true);
+    })
+})
 
 WA.room.onEnterZone(zoneTutorial, () => {
     currentPopup = WA.ui.openPopup("popUpTutorial", tutorialMsg, [
@@ -128,21 +149,6 @@ WA.room.onLeaveZone(zoneTutorial2, () =>{
     }
 })
 
-WA.room.onEnterZone(zoneIntro, () => {
-    currentPopup = WA.ui.openPopup("popUpIntro", introMsg, [
-        {
-            label: "Alles Klar!",
-            callback: (popup => {
-                closePopUp();
-            })
-        }]);
-    
-})
-
-WA.room.onLeaveZone(zoneIntro, () => {
-    closePopUp();
-})
-
 WA.room.onEnterZone(zonePong, () => {
     currentPopup = WA.ui.openPopup("popUpPong", pongMsg, [
         {
@@ -150,11 +156,10 @@ WA.room.onEnterZone(zonePong, () => {
             callback: (popup => {
                 closePopUp();
             })
-        }]);
-    
+        }]);    
 })
 
-WA.room.onLeaveZone(zoneIntro, () => {
+WA.room.onLeaveZone(zonePong, () => {
     closePopUp();
 })
 
