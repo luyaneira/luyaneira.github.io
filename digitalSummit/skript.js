@@ -11,7 +11,6 @@ function closePopUp(){
     }
 }
 
-var zoneZoom = "zoom";
 var zoneIntro = "intro";
 var zoneTutorial = "tutorial";
 var zoneTutorial1 = "tutorial1";
@@ -35,21 +34,15 @@ var guideMsg = "Wegweiser\n\n" +
 "Marktstand (Zentral): Treffpunkt\n" +
 "Cocktailbar (Südwesten): Treffpunkt & Cocktails\n" +
 "Dancehall (Südosten): Musik\n" +
-"Silberturm (Süden): Minirätsel\n";
+"Silberturm (Süden): Minirätsel &\n" +
+"Workadventure@DB Infostand";
 
 var tutorialMsg = "Möchten Sie sich das Tutorial ansehen?";
 
 var pongMsg = "Pong gegeneinander?\n\n1.Wählen Sie Online-Mehrspielermodus\n" +
 "2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und klicken Sie auf 'Zimmer ändern'\n" +
 "4. Teilen Sie die Zimmernummer Ihrem Partner mit\n\n" +
-"Die Steuerung funktioniert mit den Pfeiltasten."
-
-WA.room.onEnterZone(zoneZoom, () => {
-    WA.onInit().then(async () => {
-        var position = await WA.player.getPosition();
-        WA.camera.set(position.x, position.y, 2240, 400, false, false);
-    })
-})
+"Die Steuerung funktioniert mit den Pfeiltasten.";
 
 WA.room.onEnterZone(zoneIntro, () => {
     currentPopup = WA.ui.openPopup("popUpIntro", introMsg, [
@@ -59,7 +52,10 @@ WA.room.onEnterZone(zoneIntro, () => {
                 closePopUp();
             })
         }]);
-    WA.camera.set(1056,160,2240,400,false,false);
+    WA.onInit().then(async () => {
+        var position = await WA.player.getPosition();
+        WA.camera.set(position.x, position.y, 2240, 400, false, false);
+    })
 })
 
 WA.room.onLeaveZone(zoneIntro, () => {
