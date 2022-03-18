@@ -11,6 +11,7 @@ function closePopUp(){
     }
 }
 
+var zoneZoom = "zoom";
 var zoneIntro = "intro";
 var zoneTutorial = "tutorial";
 var zoneTutorial1 = "tutorial1";
@@ -42,6 +43,13 @@ var pongMsg = "Pong gegeneinander?\n\n1.Wählen Sie Online-Mehrspielermodus\n" +
 "2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und klicken Sie auf 'Zimmer ändern'\n" +
 "4. Teilen Sie die Zimmernummer Ihrem Partner mit\n\n" +
 "Die Steuerung funktioniert mit den Pfeiltasten."
+
+WA.room.onEnterZone(zoneZoom, () => {
+    WA.onInit().then(async () => {
+        var position = await WA.player.getPosition();
+        WA.camera.set(position.x, position.y, 2240, 400, false, false);
+    })
+})
 
 WA.room.onEnterZone(zoneIntro, () => {
     currentPopup = WA.ui.openPopup("popUpIntro", introMsg, [
