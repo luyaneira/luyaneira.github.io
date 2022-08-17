@@ -6308,7 +6308,7 @@
         {
          "name":"mapDescription",
          "type":"string",
-         "value":"DB WorkAdventure - DB Systel TechCon"
+         "value":"DB WorkAdventure - DB Recruiting"
         }, 
         {
          "name":"mapImage",
@@ -6323,7 +6323,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"mainhall_script.js"
+         "value":"src\/mainhall_script.js"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.9.1",
