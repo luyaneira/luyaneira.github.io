@@ -3,6 +3,10 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
 
+WA.onInit().then(() => {
+    console.log('Current player name: ', WA.player.name);
+});
+
 export function closePopUp(){
     if (currentPopup !== undefined) {
         currentPopup.close();
@@ -64,7 +68,7 @@ export function openPopupWithWebsiteYesNo(popUpName, msg, websiteUrl) {
         {
             label: "Ja",
             callback: (popup => {
-                WA.openTab(websiteUrl);
+                WA.nav.openTab(websiteUrl);
                 isCoWebSiteOpened = true;
                 closePopUp();
             })
@@ -76,7 +80,7 @@ export function closePopupWithWebsite() {
     closePopUp();
     
     if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
+        closeCoWebSite();
         isCoWebSiteOpened = false;
     }
 }

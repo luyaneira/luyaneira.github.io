@@ -40,6 +40,14 @@ export const track6Map = new Map ([
     [new Date(2022,4,12,20), "Digital+Twin"]
 ]);
 
+export const track7Map = new Map ([
+    ["TrackNo", "Track+7"],
+    [new Date(2022,4,11,13,55), "Immersive"],
+    [new Date(2022,4,11,20), "DevOps+2"],
+    [new Date(2022,4,12,13,55), "UX"],
+    [new Date(2022,4,12,20), "Digital+Twin"]
+]);
+
 export function setTrackContent(signToTrackMap) {
     let currentTime = Date.now();
 
