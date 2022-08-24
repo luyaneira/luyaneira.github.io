@@ -52,11 +52,3 @@ for (const progZone of zone2PopUpMap.keys()) {
     WA.room.onEnterLayer(progZone).subscribe(() => {openPopupWithWebsiteYesNo(zone2PopUpMap.get(progZone), programMsg, urlProgram)})
     WA.room.onLeaveLayer(progZone).subscribe(() => {closePopUp()})
 }
-
-var bookstoreZone = "bookstore-npc";
-var popUpBookstore = "popUpBookstore";
-var urlShareCommunity = "https://dbsw.sharepoint.com/sites/DB.Cloud.Bar.Camp/Lists/Share%20your%20DB%20Community/AllItems.aspx?ct=1651851483247&or=Teams%2DHL";
-var bookstoreMsg = "Willkommen bei Schmied & Huhn!\nMöchtest du Informationen zu einer Community erhalten oder teilen?";
-
-WA.room.onEnterLayer(bookstoreZone).subscribe(() => {openPopupWithWebsiteYesNo(popUpBookstore, bookstoreMsg, urlShareCommunity)})
-WA.room.onLeaveLayer(bookstoreZone).subscribe(() => {closePopUp()})

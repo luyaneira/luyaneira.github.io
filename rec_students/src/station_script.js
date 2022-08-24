@@ -1,9 +1,8 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {openPopupWithWebsiteYesNo, closePopupWithWebsite, closePopUp, openPopUpOkOnly } from "./popUp_script.js";
 
-var introMsg = "Herzlich Willkommen zur DB TechCon 2022!\n\n" +
-"Um Dich zu bewegen, nutze die Pfeiltasten auf der Tastatur oder navigiere per Rechtsklick zu einem Punkt auf der Karte. Zoomen kannst Du mit dem Mausrad.\n" +
-"Ein ausführliches Tutorial findest Du auf der Anschlagtafel links und rechts vom Eingang des Bahnhofs.\n\n" +
+var introMsg = "Herzlich Willkommen zu DB Recruiting 2022!\n\n" +
+"Um Dich zu bewegen, nutze die Pfeiltasten auf der Tastatur oder navigiere per Rechtsklick zu einem Punkt auf der Karte. Zoomen kannst Du mit dem Mausrad.\n\n" +
 "Wir wünschen Euch viel Spaß!";
 var introLabel = "Alles Klar";
 
@@ -18,19 +17,6 @@ WA.onInit().then(() => {
 WA.room.onLeaveZone(zoneIntro, () => {
     closePopUp();
 })
-
-var urlTutorial = "https://db-planet.deutschebahn.com/pages/telefonie/apps/content/workadventure-erste-schritte";
-var tutorialMsg = "Möchtest Du Dir das Tutorial ansehen?";
-
-const zone2PopUpMap = new Map ([
-    ["tutorial1", "popUpTutorial1"],
-    ["tutorial2", "popUpTutorial2"]
-]);
-
-for (const tutZone of zone2PopUpMap.keys()) {
-    WA.room.onEnterZone(tutZone, () => {openPopupWithWebsiteYesNo(zone2PopUpMap.get(tutZone), tutorialMsg, urlTutorial)})
-    WA.room.onLeaveZone(tutZone, () =>{closePopupWithWebsite()})
-}
 
 var zoneMictest = "mictest";
 var zoneMeettest = "meettest";
