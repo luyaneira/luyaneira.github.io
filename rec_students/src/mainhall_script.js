@@ -1,7 +1,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 //import {track1Map, track2Map, track3Map, track4Map, track5Map, track6Map, track7Map, setTrackContent, refreshSigns } from "./sign_script.js";
-import {openPopupWithWebsiteYesNo, closePopUp} from "./popUp_script.js";
-import {programMsg, urlProgram } from "./vars.js";
+import {openPopupWithWebsiteYesNo, closePopUp, openPopUpOkOnly} from "./popUp_script.js";
+import {programMsg, urlProgram, bookstoreMsg } from "./vars.js";
 
 /***********************************************
  * Sign functions
@@ -52,3 +52,9 @@ for (const progZone of zone2PopUpMap.keys()) {
     WA.room.onEnterLayer(progZone).subscribe(() => {openPopupWithWebsiteYesNo(zone2PopUpMap.get(progZone), programMsg, urlProgram)})
     WA.room.onLeaveLayer(progZone).subscribe(() => {closePopUp()})
 }
+
+var bookstore_npcLayer = "bookstore_npc"
+var bookstore_npcPopUp = "PopUpBookstore"
+
+WA.room.onEnterLayer(bookstore_npcLayer).subscribe(() => {openPopUpOkOnly(bookstore_npcPopUp, bookstoreMsg, "OK")})
+WA.room.onLeaveLayer(bookstore_npcLayer).subscribe(() => {closePopUp()})
