@@ -3,6 +3,7 @@ import {track7Map, setTrackContent, refreshSigns } from "./sign_script.js";
 import {openPopupWithWebsiteYesNo, closePopupWithWebsite, openPopUpOkOnly, closePopUp } from "./popUp_script.js";
 import * as vars from "./vars.js";
 
+/*
 const sign7a = await WA.room.website.get("sign7a");
 const sign7b = await WA.room.website.get("sign7b");
 
@@ -13,7 +14,7 @@ const signToTrackMap = new Map ([
 
 setTrackContent(signToTrackMap);
 refreshSigns(signToTrackMap);
-
+*/
 WA.room.onEnterZone(vars.programZone, () => {openPopupWithWebsiteYesNo(vars.programPopUp, vars.programMsg, vars.urlProgram)})
 WA.room.onLeaveZone(vars.programZone, () => {closePopupWithWebsite()})
 
