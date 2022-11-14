@@ -1,4 +1,4 @@
-import { bootstrapExtra } from "@workadventure/scripting-api-extra"
+//import { bootstrapExtra } from "@workadventure/scripting-api-extra"
 bootstrapExtra();
 
 //import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
