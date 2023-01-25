@@ -77,7 +77,7 @@
                                 {
                                  "name":"exitUrl",
                                  "type":"string",
-                                 "value":".\/skydeck_ffm#specialArea\/exits\/entry_skydeck_ffm"
+                                 "value":".\/skydeck-frankfurt#specialArea\/exits\/entry_skydeck_ffm"
                                 }],
                          "type":"tilelayer",
                          "visible":true,
