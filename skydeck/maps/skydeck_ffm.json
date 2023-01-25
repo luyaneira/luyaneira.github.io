@@ -186,7 +186,7 @@
                                 {
                                  "name":"exitUrl",
                                  "type":"string",
-                                 "value":".\/skydeck_bln.json#specialArea\/exits\/entry_skydeck_bln"
+                                 "value":".\/skydeck_bln#specialArea\/exits\/entry_skydeck_bln"
                                 }],
                          "type":"tilelayer",
                          "visible":true,
