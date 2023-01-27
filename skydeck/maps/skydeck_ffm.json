@@ -3354,11 +3354,6 @@
                                  "value":false
                                 }, 
                                 {
-                                 "name":"description",
-                                 "type":"string",
-                                 "value":"Aufzug 11 \u00f6ffnen"
-                                }, 
-                                {
                                  "name":"door",
                                  "type":"bool",
                                  "value":true
@@ -3416,29 +3411,6 @@
                          "width":0,
                          "x":2883.33333333333,
                          "y":1514.66666666667
-                        }, 
-                        {
-                         "class":"variable",
-                         "height":0,
-                         "id":10,
-                         "name":"table5",
-                         "point":true,
-                         "properties":[
-                                {
-                                 "name":"default",
-                                 "type":"string",
-                                 "value":"Tisch 5"
-                                }, 
-                                {
-                                 "name":"label",
-                                 "type":"string",
-                                 "value":"Tisch 5 Zeile 1:"
-                                }],
-                         "rotation":0,
-                         "visible":true,
-                         "width":0,
-                         "x":2730,
-                         "y":1612
                         }],
                  "opacity":1,
                  "properties":[
