@@ -4470,7 +4470,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":".\/skydeck_ffm.ts"
+         "value":"\/src\/skydeck_ffm.ts"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
