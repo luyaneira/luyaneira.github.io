@@ -4546,7 +4546,7 @@
          "objects":[],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -5008,7 +5008,7 @@
          "name":"configuration",
          "opacity":1,
          "type":"group",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -6752,7 +6752,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"\/skydeck\/src\/skydeck_ffm.ts"
+         "value":"\/skydeck\/src\/main.ts"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
