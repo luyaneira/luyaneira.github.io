@@ -7713,7 +7713,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"\/skydeck\/src\/skydeck_ffm.js"
+         "value":"\/skydeck\/src\/skydeck_ffm.ts"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
