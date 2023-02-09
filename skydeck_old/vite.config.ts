@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { getMapsOptimizers, getMapsScripts } from "wa-map-optimizer-vite";
 
 export default defineConfig({
-    base: "./",
+    base: "./skydeck_old",
     build: {
         rollupOptions: {
             input: {
